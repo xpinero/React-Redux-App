@@ -1,25 +1,23 @@
 import React, { useEffect } from 'react';
-import { useDispatchm useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchQuotes } from './actions/quoteActions';
+import QuoteOfTheDay from './components/QuoteOfTheDay.js';
 import './App.css';
 
 function App() {
+  const dispatch = useDispatch();
+  const errors = useSelector(state => state.errors);
+
+  useEffect(() => {
+    dispatch(fetchQuotes());
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1 className='Header'>Random quote of the day</h1>
+     <QuoteOfTheDay />
+     <button onClick={() => dispatch(fetchQuotes())}>Next Quote</button>
+     {errors ? <p>{errors}</p> : <></>}
     </div>
   );
 }
