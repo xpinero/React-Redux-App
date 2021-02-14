@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.Header {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.TheQuote {
+  background-color: rgb(0, 0, 0, .7);
+  color: white;
+  font-family: fantasy;
+  padding: 2em;}
+
+body {
+  background-image: url('./photos/pexels-pixabay-531880.jpg');
+}
+
+
